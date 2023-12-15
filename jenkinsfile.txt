@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // Use the checkout step to clone the Git repository
-                    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: GIT_REPO_URL]]])
+                    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url:https://github.com/Hasmita123/jenkins1.git ]]])
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     // Using the Jenkins workspace variable to reference files
-                    bat 'xcopy /y "C:\\Users\\Admin\\Downloads\\nginx-1.24.0\\nginx-1.24.0\\htmldocs"'
+                    bat 'xcopy /y "C:\Users\Admin\Documents\20211CDV0061\index.html""%NGINX_PATH%"'
                 }
             }
         }
